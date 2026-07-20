@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ShieldCheck, Zap, Cloud, Smartphone, Code, Briefcase, MessageSquare, Camera, Video, CheckCircle2, ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function CinematicEnding() {
   const [email, setEmail] = useState("");
@@ -62,13 +63,16 @@ export function CinematicEnding() {
             transition={{ delay: 0.2 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
           >
-             <button className="relative group px-10 py-5 rounded-full font-bold text-lg text-white w-full sm:w-auto shadow-xl hover:shadow-[0_0_40px_rgba(143,124,255,0.4)] transition-all duration-300 hover:scale-105">
+             <Link 
+                to="/auth/signup"
+                className="relative group px-10 py-5 rounded-full font-bold text-lg text-white w-full sm:w-auto shadow-xl hover:shadow-[0_0_40px_rgba(143,124,255,0.4)] transition-all duration-300 hover:scale-105 flex items-center justify-center text-center"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-aurora-lavender via-aurora-pink to-aurora-coral rounded-full" />
                 <div className="absolute inset-0 bg-gradient-to-r from-aurora-mint via-aurora-aqua to-aurora-lavender rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Get Started Free <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
-             </button>
+             </Link>
              
              <button className="px-10 py-5 rounded-full font-bold text-lg text-foreground bg-white/40 backdrop-blur-md border border-white/60 hover:bg-white hover:scale-105 transition-all w-full sm:w-auto shadow-sm">
                 Book a Live Demo

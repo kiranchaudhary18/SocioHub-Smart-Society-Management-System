@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
-import { Search, Bell, Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -137,14 +137,6 @@ export default function PublicLayout() {
           
           {/* Desktop Right Actions */}
           <div className="hidden lg:flex items-center gap-2 relative z-10">
-            <button className="h-10 w-10 rounded-full flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-white/30 transition-all">
-              <Search className="h-5 w-5" />
-            </button>
-            <button className="h-10 w-10 rounded-full flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-white/30 transition-all relative mr-2">
-              <Bell className="h-5 w-5" />
-              <span className="absolute top-2 right-2.5 h-2 w-2 rounded-full bg-aurora-coral border border-white/50" />
-            </button>
-            
             <Link 
               to="/auth/login" 
               className="px-5 py-2.5 text-sm font-semibold text-foreground/80 hover:text-foreground hover:bg-white/40 rounded-full transition-all"
@@ -153,7 +145,7 @@ export default function PublicLayout() {
             </Link>
             
             <Link 
-              to="/auth/login" 
+              to="/auth/signup" 
               className="group relative inline-flex h-10 items-center justify-center gap-2 overflow-hidden rounded-full bg-foreground px-6 font-semibold text-background transition-all hover:scale-105 shadow-lg"
             >
               {/* Aurora Hover Gradient inside button */}
@@ -203,7 +195,7 @@ export default function PublicLayout() {
                 Sign In
               </Link>
               <Link 
-                to="/auth/login" 
+                to="/auth/signup" 
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-3 mt-2 text-lg font-semibold bg-gradient-to-r from-aurora-mint to-aurora-aqua text-foreground rounded-xl shadow-lg"
               >

@@ -119,7 +119,7 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto"
             >
               <Link 
-                to="/auth/login"
+                to="/auth/signup"
                 className="group relative inline-flex h-16 w-full sm:w-auto items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-aurora-mint via-aurora-aqua to-aurora-lavender px-10 font-bold text-foreground transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(114,241,209,0.4)] hover:shadow-[0_0_60px_rgba(143,124,255,0.6)]"
               >
                 <span className="absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
