@@ -60,6 +60,15 @@ const config = {
           DEFAULT: "hsl(var(--warning))",
           foreground: "hsl(var(--warning-foreground))",
         },
+        aurora: {
+          mint: "#72F1D1",
+          lavender: "#8F7CFF",
+          pink: "#FF5DA2",
+          gold: "#FFD166",
+          aqua: "#3DD9FF",
+          coral: "#FF7A7A",
+          lime: "#8BF178",
+        },
       },
       fontFamily: {
         heading: ["Satoshi", "sans-serif"],

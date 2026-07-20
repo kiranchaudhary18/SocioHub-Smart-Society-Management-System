@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%; /* #F8FAFC */
-    --foreground: 222 47% 11%; /* #111827 (Heading) */
+    --background: 240 33% 99%; /* #FCFCFD */
+    --foreground: 222 47% 11%; /* #0F172A (Text) */
     
     --card: 0 0% 100%; /* #FFFFFF */
     --card-foreground: 222 47% 11%;
@@ -45,7 +45,7 @@
 
   /* No dark mode, strictly forcing light mode vars for safety if any system prefers dark */
   .dark {
-    --background: 210 40% 98%;
+    --background: 240 33% 99%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;

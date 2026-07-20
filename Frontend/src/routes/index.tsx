@@ -3,8 +3,8 @@ import PublicLayout from "@/layouts/PublicLayout";
 import AuthLayout from "@/layouts/AuthLayout";
 import DashboardLayout from "@/layouts/DashboardLayout";
 
-// Placeholder pages for skeletons
-const LandingPage = () => <div className="p-8">Landing Page skeleton</div>;
+import LandingPage from "@/pages/LandingPage";
+
 const LoginPage = () => <div className="p-8">Login Page skeleton</div>;
 const SuperAdminPage = () => <div className="p-8">Super Admin Dashboard skeleton</div>;
 const SocietyAdminPage = () => <div className="p-8">Society Admin Dashboard skeleton</div>;
