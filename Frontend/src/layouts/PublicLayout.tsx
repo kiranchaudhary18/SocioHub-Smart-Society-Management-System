@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { Search, Bell, Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -15,6 +15,42 @@ const navLinks = [
 export default function PublicLayout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Scroll to hash on mount if present
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      if (location.pathname !== "/") {
+        navigate("/" + href);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", href);
+        }
+      }
+      setMobileMenuOpen(false);
+    } else if (href === "/") {
+      if (location.pathname === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.history.pushState(null, "", "/");
+      }
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-body selection:bg-aurora-mint/30 selection:text-foreground relative">
@@ -49,7 +85,7 @@ export default function PublicLayout() {
           className="w-[92%] h-[74px] rounded-[24px] bg-white/10 backdrop-blur-3xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)] flex items-center justify-between px-6 transition-all duration-300"
         >
           {/* Logo Area */}
-          <Link to="/" className="flex items-center gap-3 group relative z-10">
+          <Link to="/" onClick={(e) => handleNavClick(e, "/")} className="flex items-center gap-3 group relative z-10">
             {/* Custom Abstract Logo */}
             <div className="relative w-9 h-9 flex items-center justify-center">
               <svg viewBox="0 0 40 40" className="w-full h-full drop-shadow-md">
@@ -79,6 +115,7 @@ export default function PublicLayout() {
                 <Link 
                   key={link.name} 
                   to={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="relative px-5 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-full overflow-hidden group"
                 >
                   {isActive && (
@@ -151,7 +188,7 @@ export default function PublicLayout() {
                 <Link 
                   key={link.name} 
                   to={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-lg font-heading font-semibold text-foreground/80 hover:text-foreground py-3 rounded-xl hover:bg-white/50 transition-all"
                 >
                   {link.name}

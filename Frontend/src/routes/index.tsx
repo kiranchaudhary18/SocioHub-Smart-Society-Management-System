@@ -4,6 +4,12 @@ import AuthLayout from "@/layouts/AuthLayout";
 import DashboardLayout from "@/layouts/DashboardLayout";
 
 import LandingPage from "@/pages/LandingPage";
+import FormShowcase from "@/pages/FormShowcase";
+import DataShowcase from "@/pages/DataShowcase";
+import NavigationShowcase from "@/pages/NavigationShowcase";
+import FeedbackShowcase from "@/pages/FeedbackShowcase";
+import AnalyticsShowcase from "@/pages/AnalyticsShowcase";
+import AppLayout from "@/components/layout/AppLayout";
 
 const LoginPage = () => <div className="p-8">Login Page skeleton</div>;
 const SuperAdminPage = () => <div className="p-8">Super Admin Dashboard skeleton</div>;
@@ -24,8 +30,38 @@ export const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
+        path: "forms",
+        element: <FormShowcase />,
+      },
+      {
+        path: "data-display",
+        element: <DataShowcase />,
+      },
+      {
+        path: "feedback",
+        element: <FeedbackShowcase />,
+      },
+      {
+        path: "analytics",
+        element: <AnalyticsShowcase />,
+      },
+      {
         path: "unauthorized",
         element: <UnauthorizedPage />,
+      },
+    ],
+  },
+  {
+    path: "/app",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "",
+        element: <NavigationShowcase />,
+      },
+      {
+        path: "*",
+        element: <NavigationShowcase />,
       },
     ],
   },

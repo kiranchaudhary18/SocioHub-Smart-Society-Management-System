@@ -6,72 +6,145 @@
 
 @layer base {
   :root {
+    /* Base Surface */
     --background: 240 33% 99%; /* #FCFCFD */
-    --foreground: 222 47% 11%; /* #0F172A (Text) */
+    --foreground: 222 47% 11%; /* #0F172A */
     
-    --card: 0 0% 100%; /* #FFFFFF */
-    --card-foreground: 222 47% 11%;
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    
-    --primary: 243 100% 69%; /* #6C63FF */
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 192 82% 62%; /* #4CC9F0 */
-    --secondary-foreground: 0 0% 100%;
-    
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%; /* #6B7280 (Body) */
-    
-    --accent: 330 81% 60%; /* #EC4899 */
-    --accent-foreground: 0 0% 100%;
-    
-    --destructive: 0 84% 60%; /* #EF4444 */
-    --destructive-foreground: 0 0% 100%;
-
-    --success: 142 71% 45%; /* #22C55E */
-    --success-foreground: 0 0% 100%;
-
-    --warning: 32 100% 50%; /* #FF8A00 */
-    --warning-foreground: 0 0% 100%;
-
-    --border: 220 13% 91%; /* #E5E7EB */
-    --input: 220 13% 91%;
-    --ring: 243 100% 69%;
-    
-    --radius: 0.875rem; /* 14px default for buttons/inputs */
-  }
-
-  /* No dark mode, strictly forcing light mode vars for safety if any system prefers dark */
-  .dark {
-    --background: 240 33% 99%;
-    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
+    
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 243 100% 69%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 192 82% 62%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 330 81% 60%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --success: 142 71% 45%;
-    --success-foreground: 0 0% 100%;
-    --warning: 32 100% 50%;
-    --warning-foreground: 0 0% 100%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 243 100% 69%;
-  }
-}
 
-@layer base {
+    /* --- SEMANTIC COLORS (50-900) --- */
+
+    /* Primary (Aurora Mint) */
+    --primary-50: 162 100% 97%;
+    --primary-100: 162 100% 91%;
+    --primary-200: 162 100% 81%;
+    --primary-300: 162 100% 67%;
+    --primary-400: 162 85% 55%;
+    --primary-500: 162 82% 70%; /* #72F1D1 */
+    --primary-600: 162 75% 42%;
+    --primary-700: 162 70% 34%;
+    --primary-800: 162 65% 28%;
+    --primary-900: 162 60% 24%;
+    --primary: var(--primary-500);
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary (Aurora Lavender) */
+    --secondary-50: 249 100% 97%;
+    --secondary-100: 249 100% 94%;
+    --secondary-200: 249 100% 88%;
+    --secondary-300: 249 100% 81%;
+    --secondary-400: 249 100% 74%;
+    --secondary-500: 249 100% 74%; /* #8F7CFF */
+    --secondary-600: 249 85% 65%;
+    --secondary-700: 249 70% 55%;
+    --secondary-800: 249 60% 45%;
+    --secondary-900: 249 50% 35%;
+    --secondary: var(--secondary-500);
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent (Aurora Pink) */
+    --accent-50: 334 100% 97%;
+    --accent-100: 334 100% 94%;
+    --accent-200: 334 100% 87%;
+    --accent-300: 334 100% 79%;
+    --accent-400: 334 100% 70%;
+    --accent-500: 334 100% 68%; /* #FF5DA2 */
+    --accent-600: 334 85% 55%;
+    --accent-700: 334 75% 45%;
+    --accent-800: 334 65% 35%;
+    --accent-900: 334 55% 25%;
+    --accent: var(--accent-500);
+    --accent-foreground: 0 0% 100%;
+
+    /* Success (Green) */
+    --success-50: 142 76% 97%;
+    --success-100: 142 76% 90%;
+    --success-200: 142 76% 80%;
+    --success-300: 142 76% 65%;
+    --success-400: 142 71% 55%;
+    --success-500: 142 71% 45%;
+    --success-600: 142 76% 36%;
+    --success-700: 142 76% 28%;
+    --success-800: 142 76% 22%;
+    --success-900: 142 76% 18%;
+    --success: var(--success-500);
+    --success-foreground: 0 0% 100%;
+
+    /* Warning (Gold/Amber) */
+    --warning-50: 38 100% 96%;
+    --warning-100: 38 100% 90%;
+    --warning-200: 38 100% 80%;
+    --warning-300: 38 100% 68%;
+    --warning-400: 38 100% 58%;
+    --warning-500: 38 100% 50%;
+    --warning-600: 38 100% 42%;
+    --warning-700: 38 100% 34%;
+    --warning-800: 38 100% 28%;
+    --warning-900: 38 100% 24%;
+    --warning: var(--warning-500);
+    --warning-foreground: 0 0% 100%;
+
+    /* Danger (Red/Coral) */
+    --danger-50: 0 100% 97%;
+    --danger-100: 0 100% 93%;
+    --danger-200: 0 100% 86%;
+    --danger-300: 0 100% 74%;
+    --danger-400: 0 100% 60%;
+    --danger-500: 0 100% 74%; /* #FF7A7A */
+    --danger-600: 0 75% 55%;
+    --danger-700: 0 75% 45%;
+    --danger-800: 0 75% 35%;
+    --danger-900: 0 75% 25%;
+    --destructive: var(--danger-500);
+    --destructive-foreground: 0 0% 100%;
+
+    /* Info (Blue/Aqua) */
+    --info-50: 192 100% 96%;
+    --info-100: 192 100% 90%;
+    --info-200: 192 100% 80%;
+    --info-300: 192 100% 68%;
+    --info-400: 192 100% 58%;
+    --info-500: 192 100% 62%; /* #3DD9FF */
+    --info-600: 192 80% 50%;
+    --info-700: 192 80% 40%;
+    --info-800: 192 80% 30%;
+    --info-900: 192 80% 20%;
+    --info: var(--info-500);
+    --info-foreground: 0 0% 100%;
+
+    /* Neutral (Slate) */
+    --neutral-50: 210 40% 98%;
+    --neutral-100: 210 40% 96%;
+    --neutral-200: 214 32% 91%;
+    --neutral-300: 213 27% 84%;
+    --neutral-400: 215 20% 65%;
+    --neutral-500: 215 16% 47%;
+    --neutral-600: 215 19% 35%;
+    --neutral-700: 215 25% 27%;
+    --neutral-800: 217 33% 17%;
+    --neutral-900: 222 47% 11%;
+    --muted: var(--neutral-100);
+    --muted-foreground: var(--neutral-500);
+
+    /* UI Borders & Rings */
+    --border: var(--neutral-200);
+    --input: var(--neutral-200);
+    --ring: var(--primary-500);
+    
+    /* Radii */
+    --radius-sm: 0.25rem; /* 4px */
+    --radius-md: 0.5rem; /* 8px */
+    --radius-lg: 0.75rem; /* 12px */
+    --radius-xl: 1rem; /* 16px */
+    --radius-2xl: 1.5rem; /* 24px */
+    --radius-3xl: 2rem; /* 32px */
+    --radius: var(--radius-lg);
+  }
+
   * {
     border-color: hsl(var(--border));
   }
@@ -89,6 +162,32 @@
 }
 
 @layer utilities {
+  /* Glass Surface Utilities */
+  .glass-light {
+    @apply bg-white/30 backdrop-blur-md border border-white/40;
+  }
+  .glass-strong {
+    @apply bg-white/60 backdrop-blur-2xl border border-white/60 shadow-glass;
+  }
+  .glass-sidebar {
+    @apply bg-white/40 backdrop-blur-3xl border-r border-white/50;
+  }
+  .glass-modal {
+    @apply bg-white/70 backdrop-blur-3xl border border-white/80 shadow-2xl;
+  }
+  .glass-card-hover {
+    @apply hover:-translate-y-1 hover:shadow-glow hover:bg-white/70 transition-all duration-300;
+  }
+
+  /* Shadow Elevation Utilities */
+  .shadow-glass {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.04);
+  }
+  .shadow-glow {
+    box-shadow: 0 0 40px rgba(143,124,255,0.3); /* Uses Aurora Lavender */
+  }
+
+  /* Legacy utility classes for older landing page components */
   .bg-gradient-primary {
     background-image: linear-gradient(to right, #6C63FF, #4CC9F0);
   }
@@ -98,18 +197,15 @@
   .bg-gradient-success {
     background-image: linear-gradient(to right, #22C55E, #4ADE80);
   }
-  
   .text-gradient-primary {
     background-image: linear-gradient(to right, #6C63FF, #4CC9F0);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-  
   .shadow-soft {
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
   }
-  
   .shadow-floating {
     box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
   }
