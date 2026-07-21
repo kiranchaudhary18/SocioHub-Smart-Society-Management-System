@@ -23,8 +23,16 @@ import { GuestRoute } from "@/core/guards/GuestRoute";
 import { RoleRoute } from "@/core/guards/RoleRoute";
 import { Role } from "@/types/auth";
 
+// Super Admin Dashboards
+import { DashboardLayout } from "@/features/super-admin/components/layout/DashboardLayout";
+import SuperAdminDashboard from "@/features/super-admin/pages/SuperAdminDashboard";
+import PendingApprovalsPage from "@/features/super-admin/pages/PendingApprovalsPage";
+import AllSocietiesPage from "@/features/super-admin/pages/AllSocietiesPage";
+import SocietyDetailsPage from "@/features/super-admin/pages/SocietyDetailsPage";
+import CreateSocietyPage from "@/features/super-admin/pages/CreateSocietyPage";
+import SocietyAdminsPage from "@/features/super-admin/pages/SocietyAdminsPage";
+
 // Temporary Skeletons
-const SuperAdminPage = () => <div className="p-8">Super Admin Dashboard skeleton</div>;
 const SocietyAdminPage = () => <div className="p-8">Society Admin Dashboard skeleton</div>;
 const ResidentPage = () => <div className="p-8">Resident Dashboard skeleton</div>;
 const SecurityPage = () => <div className="p-8">Security Dashboard skeleton</div>;
@@ -86,13 +94,6 @@ export const router = createBrowserRouter([
           
           // Role Based Dashboards
           {
-            path: "super-admin",
-            element: <RoleRoute requiredRole={Role.SUPER_ADMIN} exact><Outlet /></RoleRoute>,
-            children: [
-              { path: "", element: <SuperAdminPage /> },
-            ]
-          },
-          {
             path: "admin",
             element: <RoleRoute requiredRole={Role.SOCIETY_ADMIN} exact><Outlet /></RoleRoute>,
             children: [
@@ -120,6 +121,26 @@ export const router = createBrowserRouter([
               { path: "", element: <StaffPage /> },
             ]
           },
+        ],
+      },
+      
+      // Super Admin Shell (Custom Aurora Dashboard Layout)
+      {
+        path: "/super-admin",
+        element: (
+          <ProtectedRoute>
+            <RoleRoute requiredRole={Role.SUPER_ADMIN} exact>
+              <DashboardLayout />
+            </RoleRoute>
+          </ProtectedRoute>
+        ),
+        children: [
+          { path: "", element: <SuperAdminDashboard /> },
+          { path: "approvals", element: <PendingApprovalsPage /> },
+          { path: "societies", element: <AllSocietiesPage /> },
+          { path: "societies/create", element: <CreateSocietyPage /> },
+          { path: "societies/:id", element: <SocietyDetailsPage /> },
+          { path: "society-admins", element: <SocietyAdminsPage /> },
         ],
       },
       

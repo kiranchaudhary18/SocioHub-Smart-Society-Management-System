@@ -1,0 +1,42 @@
+export const recentActivities = [
+  {
+    id: "act-1",
+    title: "Society Created",
+    description: "Royal Heights Residency was created in Ahmedabad.",
+    time: "2 mins ago",
+    type: "create",
+    color: "#72F1D1",
+  },
+  {
+    id: "act-2",
+    title: "Secretary Approved",
+    description: "Rajesh Kumar's account approved as Society Admin.",
+    time: "15 mins ago",
+    type: "approve",
+    color: "#8F7CFF",
+  },
+  {
+    id: "act-3",
+    title: "Resident Joined",
+    description: "New resident onboarding completed at Silver Woods.",
+    time: "1 hour ago",
+    type: "join",
+    color: "#FF5DA2",
+  },
+  {
+    id: "act-4",
+    title: "Subscription Renewed",
+    description: "Emerald Valley renewed their Pro plan.",
+    time: "2 hours ago",
+    type: "payment",
+    color: "#3DD9FF",
+  },
+  {
+    id: "act-5",
+    title: "Complaint Escalated",
+    description: "High priority ticket raised in Sunrise Apartments.",
+    time: "5 hours ago",
+    type: "alert",
+    color: "#FF7A7A",
+  },
+];
