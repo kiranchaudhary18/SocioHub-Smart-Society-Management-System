@@ -28,11 +28,11 @@ export function PlatformStatus() {
 
       <div className="flex-1 flex flex-col gap-4">
         {isLoading ? (
-          [1, 2, 3, 4, 5].map(i => (
+          [1, 2, 3, 4, 5].map((i: number) => (
             <div key={i} className="h-12 bg-slate-100 rounded-xl animate-pulse" />
           ))
         ) : (
-          health?.map((service, index) => (
+          health?.map((service: any, index: number) => (
             <motion.div 
               key={service.service}
               initial={{ opacity: 0, x: 20 }}

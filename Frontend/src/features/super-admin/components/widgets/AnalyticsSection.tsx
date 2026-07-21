@@ -25,26 +25,26 @@ export function AnalyticsSection() {
         className="bg-white/60 backdrop-blur-2xl border border-white/80 rounded-[32px] p-6 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.03)]"
       >
         <div className="mb-6">
-          <h3 className="text-xl font-heading font-extrabold text-slate-800">Revenue Growth</h3>
-          <p className="text-sm font-medium text-slate-500">Monthly recurring revenue (MRR)</p>
+          <h3 className="text-xl font-heading font-extrabold text-slate-800">User Growth</h3>
+          <p className="text-sm font-medium text-slate-500">Monthly active users</p>
         </div>
         <div className="h-[300px] w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={analytics.revenue} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+            <AreaChart data={analytics.usersData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
               <defs>
-                <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="colorUsers" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#72F1D1" stopOpacity={0.8}/>
                   <stop offset="95%" stopColor="#72F1D1" stopOpacity={0}/>
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" opacity={0.5} />
               <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 12 }} dy={10} />
-              <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 12 }} tickFormatter={(val) => `$${val/1000}k`} />
+              <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 12 }} tickFormatter={(val) => `${val/1000}k`} />
               <Tooltip 
                 contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(8px)' }}
                 itemStyle={{ color: '#0f172a', fontWeight: 'bold' }}
               />
-              <Area type="monotone" dataKey="revenue" stroke="#72F1D1" strokeWidth={3} fillOpacity={1} fill="url(#colorRevenue)" />
+              <Area type="monotone" dataKey="users" stroke="#72F1D1" strokeWidth={3} fillOpacity={1} fill="url(#colorUsers)" />
             </AreaChart>
           </ResponsiveContainer>
         </div>

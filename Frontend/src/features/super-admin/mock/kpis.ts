@@ -14,9 +14,9 @@ export const kpiData = {
     trend: "-5% from last week",
     positive: true, // fewer pending is better
   },
-  monthlyRevenue: {
-    value: "$145,000",
-    trend: "+24% from last month",
-    positive: true,
+  activeAdmins: {
+    value: "1,245",
+    trend: "+5.2% from last month",
+    positive: true
   }
 };

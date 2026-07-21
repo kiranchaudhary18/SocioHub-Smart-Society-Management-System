@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { 
   Building2, ChevronLeft, MapPin, Users, Shield, 
   Wrench, Car, AlertTriangle, Eye, FileText, 
-  BarChart3, Settings, Calendar, CreditCard 
+  BarChart3, Settings, Calendar 
 } from "lucide-react";
 import * as Tabs from "@radix-ui/react-tabs";
 

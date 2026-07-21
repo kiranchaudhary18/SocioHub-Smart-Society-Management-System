@@ -31,6 +31,15 @@ import AllSocietiesPage from "@/features/super-admin/pages/AllSocietiesPage";
 import SocietyDetailsPage from "@/features/super-admin/pages/SocietyDetailsPage";
 import CreateSocietyPage from "@/features/super-admin/pages/CreateSocietyPage";
 import SocietyAdminsPage from "@/features/super-admin/pages/SocietyAdminsPage";
+import PlatformUsersPage from "@/features/super-admin/pages/PlatformUsersPage";
+import AnalyticsPage from "@/features/super-admin/pages/AnalyticsPage";
+import AnnouncementsPage from "@/features/super-admin/pages/AnnouncementsPage";
+import SupportCenterPage from "@/features/super-admin/pages/SupportCenterPage";
+import AuditLogsPage from "@/features/super-admin/pages/AuditLogsPage";
+import RolesPermissionsPage from "@/features/super-admin/pages/RolesPermissionsPage";
+import CMSPage from "@/features/super-admin/pages/CMSPage";
+import SettingsPage from "@/features/super-admin/pages/SettingsPage";
+import ProfilePage from "@/features/super-admin/pages/ProfilePage";
 
 // Temporary Skeletons
 const SocietyAdminPage = () => <div className="p-8">Society Admin Dashboard skeleton</div>;
@@ -141,6 +150,15 @@ export const router = createBrowserRouter([
           { path: "societies/create", element: <CreateSocietyPage /> },
           { path: "societies/:id", element: <SocietyDetailsPage /> },
           { path: "society-admins", element: <SocietyAdminsPage /> },
+          { path: "users", element: <PlatformUsersPage /> },
+          { path: "analytics", element: <AnalyticsPage /> },
+          { path: "announcements", element: <AnnouncementsPage /> },
+          { path: "support", element: <SupportCenterPage /> },
+          { path: "audit-logs", element: <AuditLogsPage /> },
+          { path: "roles", element: <RolesPermissionsPage /> },
+          { path: "cms", element: <CMSPage /> },
+          { path: "settings", element: <SettingsPage /> },
+          { path: "profile", element: <ProfilePage /> },
         ],
       },
       

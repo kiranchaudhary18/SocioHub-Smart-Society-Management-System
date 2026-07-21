@@ -130,7 +130,7 @@ export default function PendingApprovalsPage() {
                       <FileText className="w-4 h-4" /> Required Documents
                     </h4>
                     <div className="space-y-2 mb-6">
-                      {item.documents.map((doc, idx) => (
+                      {item.documents.map((doc: any, idx: number) => (
                         <div key={idx} className="flex justify-between items-center bg-white/40 px-3 py-2 rounded-xl border border-white">
                           <span className="text-xs font-medium text-slate-600 truncate mr-2">{doc.name}</span>
                           {doc.status === 'Verified' ? (

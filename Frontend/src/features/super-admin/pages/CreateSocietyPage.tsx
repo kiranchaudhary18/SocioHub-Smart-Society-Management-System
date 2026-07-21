@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Check, Building2, MapPin, User, CreditCard } from "lucide-react";
+import { ChevronLeft, ChevronRight, Check, Building2, MapPin, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const STEPS = [

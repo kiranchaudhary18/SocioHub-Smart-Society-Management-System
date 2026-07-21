@@ -1,4 +1,4 @@
-import { revenueData, growthData, usersDistribution } from "../mock/analytics";
+import { usersData, growthData, usersDistribution } from "../mock/analytics";
 import { detailedPendingApprovals } from "../mock/approvals";
 import { recentActivities } from "../mock/activities";
 import { platformHealth } from "../mock/platformStatus";
@@ -20,7 +20,7 @@ export const dashboardService = {
   // GET /api/v1/dashboard/analytics
   getAnalytics: async () => {
     return new Promise((resolve) => setTimeout(() => resolve({
-      revenue: revenueData,
+      usersData: usersData,
       growth: growthData,
       users: usersDistribution,
     }), 800));

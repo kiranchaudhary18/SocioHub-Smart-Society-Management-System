@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, Filter, ShieldAlert, Key, MoreHorizontal, UserCog } from "lucide-react";
+import { Search, ShieldAlert, Key, MoreHorizontal, UserCog } from "lucide-react";
 
 export default function SocietyAdminsPage() {
   const admins = [

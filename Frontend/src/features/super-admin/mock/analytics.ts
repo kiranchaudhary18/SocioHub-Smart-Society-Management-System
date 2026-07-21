@@ -1,10 +1,10 @@
-export const revenueData = [
-  { name: 'Jan', revenue: 42000 },
-  { name: 'Feb', revenue: 58000 },
-  { name: 'Mar', revenue: 65000 },
-  { name: 'Apr', revenue: 84000 },
-  { name: 'May', revenue: 110000 },
-  { name: 'Jun', revenue: 145000 },
+export const usersData = [
+  { name: 'Jan', users: 4200 },
+  { name: 'Feb', users: 5800 },
+  { name: 'Mar', users: 6500 },
+  { name: 'Apr', users: 8400 },
+  { name: 'May', users: 11000 },
+  { name: 'Jun', users: 14500 },
 ];
 
 export const growthData = [

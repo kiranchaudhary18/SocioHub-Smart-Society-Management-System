@@ -34,7 +34,7 @@ export const detailedPendingApprovals: PendingSociety[] = [
       name: "Rajesh Kumar",
       email: "rajesh@royalheights.com",
       phone: "+91 98765 43210",
-      avatar: "https://api.dicebear.com/7.x/notionists/svg?seed=Rajesh"
+      avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Rajesh"
     },
     location: {
       address: "124 SG Highway, Near Bodakdev",
@@ -61,7 +61,7 @@ export const detailedPendingApprovals: PendingSociety[] = [
       name: "Priya Sharma",
       email: "priya@sunriseapts.in",
       phone: "+91 99887 76655",
-      avatar: "https://api.dicebear.com/7.x/notionists/svg?seed=Priya"
+      avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Priya"
     },
     location: {
       address: "45 HSR Layout, Sector 2",
@@ -87,7 +87,7 @@ export const detailedPendingApprovals: PendingSociety[] = [
       name: "Amit Patel",
       email: "amit.p@emeraldvalley.com",
       phone: "+91 88990 01122",
-      avatar: "https://api.dicebear.com/7.x/notionists/svg?seed=Amit"
+      avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Amit"
     },
     location: {
       address: "Kalyani Nagar",

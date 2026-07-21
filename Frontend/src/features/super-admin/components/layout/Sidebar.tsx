@@ -2,9 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   LayoutDashboard, Users, Building2, UserCog, 
-  CreditCard, BarChart3, Megaphone, HelpCircle, 
+  BarChart3, Megaphone, HelpCircle, 
   FileText, ShieldCheck, Database, Settings, 
-  User, LogOut, ChevronLeft, ChevronRight 
+  ChevronLeft, ChevronRight 
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -18,13 +18,12 @@ const NAV_ITEMS = [
     { name: "Platform Users", icon: Users, path: "/super-admin/users" },
   ]},
   { group: "Business", items: [
-    { name: "Subscriptions", icon: CreditCard, path: "/super-admin/subscriptions" },
-    { name: "Analytics", icon: BarChart3, path: "/super-admin/analytics" },
+    { name: "Analytics & Reports", icon: BarChart3, path: "/super-admin/analytics" },
     { name: "Announcements", icon: Megaphone, path: "/super-admin/announcements" },
   ]},
   { group: "System", items: [
     { name: "Support Center", icon: HelpCircle, path: "/super-admin/support" },
-    { name: "Audit Logs", icon: FileText, path: "/super-admin/audit" },
+    { name: "Audit Logs", icon: FileText, path: "/super-admin/audit-logs" },
     { name: "Roles", icon: ShieldCheck, path: "/super-admin/roles" },
     { name: "CMS", icon: Database, path: "/super-admin/cms" },
   ]}
@@ -32,8 +31,6 @@ const NAV_ITEMS = [
 
 const BOTTOM_ITEMS = [
   { name: "Settings", icon: Settings, path: "/super-admin/settings" },
-  { name: "Profile", icon: User, path: "/super-admin/profile" },
-  { name: "Logout", icon: LogOut, path: "/auth/login", isLogout: true },
 ];
 
 export function Sidebar() {
@@ -130,7 +127,7 @@ export function Sidebar() {
 
       {/* Bottom Actions */}
       <div className="p-3 border-t border-white/40 flex flex-col gap-1">
-        {BOTTOM_ITEMS.map((item) => renderItem(item, item.isLogout))}
+        {BOTTOM_ITEMS.map((item) => renderItem(item, false))}
       </div>
     </motion.aside>
   );

@@ -1,4 +1,5 @@
-import { Bell, Search, Zap, CheckCircle2 } from "lucide-react";
+import { Search, User, LogOut } from "lucide-react";
+import { Link } from "react-router-dom";
 import { format } from "date-fns";
 
 export function Topbar() {
@@ -37,34 +38,39 @@ export function Topbar() {
           <span className="text-xs font-bold text-slate-600">All Systems Go</span>
         </div>
 
-        {/* Action Icons */}
-        <div className="flex items-center gap-2">
-          <button className="w-10 h-10 rounded-xl bg-white/60 backdrop-blur-xl border border-white/80 flex items-center justify-center text-slate-500 hover:text-[#8F7CFF] hover:bg-white/90 shadow-sm transition-all relative">
-            <Zap className="w-4 h-4" />
+        {/* Removed Action Icons as requested */}
+
+        {/* Owner Avatar & Dropdown */}
+        <div className="relative group">
+          <button className="flex items-center gap-3 p-1 pr-3 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-sm hover:bg-white/90 transition-all cursor-pointer">
+            <div className="w-10 h-10 rounded-xl overflow-hidden bg-gradient-to-br from-[#8F7CFF] to-[#3DD9FF] p-0.5">
+              <div className="w-full h-full rounded-[10px] bg-white flex items-center justify-center overflow-hidden">
+                <img 
+                  src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=transparent" 
+                  alt="Super Admin"
+                  className="w-full h-full object-cover scale-110"
+                />
+              </div>
+            </div>
+            <div className="hidden md:flex flex-col items-start">
+              <span className="text-sm font-bold text-slate-800 leading-tight">Kiran Chaudhary</span>
+              <span className="text-xs font-medium text-slate-500 leading-tight">Super Admin</span>
+            </div>
           </button>
           
-          <button className="w-10 h-10 rounded-xl bg-white/60 backdrop-blur-xl border border-white/80 flex items-center justify-center text-slate-500 hover:text-[#FF5DA2] hover:bg-white/90 shadow-sm transition-all relative">
-            <Bell className="w-4 h-4" />
-            <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#FF5DA2] border border-white" />
-          </button>
+          {/* Dropdown Menu */}
+          <div className="absolute right-0 top-full mt-2 w-48 bg-white/80 backdrop-blur-2xl border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)] rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all translate-y-2 group-hover:translate-y-0 z-50">
+            <Link to="/super-admin/profile" className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-slate-50 text-slate-600 hover:text-[#8F7CFF] font-bold text-sm transition-colors">
+              <User className="w-4 h-4" />
+              My Profile
+            </Link>
+            <div className="h-px bg-slate-100 my-1 mx-2" />
+            <Link to="/auth/login" className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-[#FF7A7A]/10 text-slate-600 hover:text-[#FF7A7A] font-bold text-sm transition-colors">
+              <LogOut className="w-4 h-4" />
+              Logout
+            </Link>
+          </div>
         </div>
-
-        {/* Owner Avatar */}
-        <button className="flex items-center gap-3 p-1 pr-3 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-sm hover:bg-white/90 transition-all cursor-pointer">
-          <div className="w-10 h-10 rounded-xl overflow-hidden bg-gradient-to-br from-[#8F7CFF] to-[#3DD9FF] p-0.5">
-            <div className="w-full h-full rounded-[10px] bg-white flex items-center justify-center overflow-hidden">
-              <img 
-                src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=transparent" 
-                alt="Super Admin"
-                className="w-full h-full object-cover scale-110"
-              />
-            </div>
-          </div>
-          <div className="hidden md:flex flex-col items-start">
-            <span className="text-sm font-bold text-slate-800 leading-tight">Kiran Chaudhary</span>
-            <span className="text-xs font-medium text-slate-500 leading-tight">Super Admin</span>
-          </div>
-        </button>
       </div>
     </header>
   );

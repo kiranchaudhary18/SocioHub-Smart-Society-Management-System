@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, Filter, Plus, MoreVertical, Building2, Users, CreditCard } from "lucide-react";
+import { Search, Plus, MoreVertical, Building2, Users } from "lucide-react";
 import { useSocieties } from "../hooks/useSocieties";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TrendingUp, TrendingDown, Building2, Users, FileSignature, CircleDollarSign } from "lucide-react";
+import { TrendingUp, TrendingDown, Building2, Users, FileSignature, ShieldCheck } from "lucide-react";
 import { useDashboardKPIs } from "../../hooks/useDashboardData";
 
 export function KPICards() {
@@ -44,11 +44,11 @@ export function KPICards() {
       bg: "bg-[#FF5DA2]/10",
     },
     {
-      title: "Monthly Revenue",
-      value: kpis.monthlyRevenue.value,
-      trend: kpis.monthlyRevenue.trend,
-      positive: kpis.monthlyRevenue.positive,
-      icon: CircleDollarSign,
+      title: "Active Admins",
+      value: kpis.activeAdmins.value,
+      trend: kpis.activeAdmins.trend,
+      positive: kpis.activeAdmins.positive,
+      icon: ShieldCheck,
       color: "text-[#3DD9FF]",
       bg: "bg-[#3DD9FF]/10",
     },
