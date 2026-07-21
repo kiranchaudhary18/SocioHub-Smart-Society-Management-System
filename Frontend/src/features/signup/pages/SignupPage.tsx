@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function SignupPage() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-[#FCFCFD] relative overflow-y-auto overflow-x-hidden font-body">
+    <div className="h-screen w-full flex items-center justify-center bg-[#FCFCFD] relative overflow-hidden font-body">
       
       {/* 
         Aurora Background Effects 
@@ -29,7 +29,7 @@ export default function SignupPage() {
       </div>
 
       {/* Main Container */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 lg:px-12 xl:px-24 min-h-screen py-8 lg:py-12 flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-24 relative z-10">
+      <div className="w-full max-w-[1440px] mx-auto px-4 lg:px-12 xl:px-24 h-full flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-24 relative z-10">
         
         {/* Left Side: Floating Visuals (Hidden on small screens) */}
         <div className="hidden xl:flex flex-1 items-center justify-center w-full max-w-[600px]">

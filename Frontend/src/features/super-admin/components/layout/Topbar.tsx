@@ -1,9 +1,11 @@
 import { Search, User, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSession } from "@/hooks/useSession";
 import { format } from "date-fns";
 
 export function Topbar() {
   const currentDate = format(new Date(), "EEEE, MMMM do, yyyy");
+  const { logout } = useSession();
 
   return (
     <header className="h-20 w-full shrink-0 flex items-center justify-between px-8 relative z-40 mt-4">
@@ -65,10 +67,10 @@ export function Topbar() {
               My Profile
             </Link>
             <div className="h-px bg-slate-100 my-1 mx-2" />
-            <Link to="/auth/login" className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-[#FF7A7A]/10 text-slate-600 hover:text-[#FF7A7A] font-bold text-sm transition-colors">
+            <button onClick={logout} className="w-full flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-[#FF7A7A]/10 text-slate-600 hover:text-[#FF7A7A] font-bold text-sm transition-colors text-left">
               <LogOut className="w-4 h-4" />
               Logout
-            </Link>
+            </button>
           </div>
         </div>
       </div>

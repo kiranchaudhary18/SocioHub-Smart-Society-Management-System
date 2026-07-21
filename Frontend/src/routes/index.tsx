@@ -19,7 +19,6 @@ import VerificationPage from "@/features/verification/pages/VerificationPage";
 
 import { SessionProvider } from "@/contexts/SessionContext";
 import { ProtectedRoute } from "@/core/guards/ProtectedRoute";
-import { GuestRoute } from "@/core/guards/GuestRoute";
 import { RoleRoute } from "@/core/guards/RoleRoute";
 import { Role } from "@/types/auth";
 
@@ -41,11 +40,48 @@ import CMSPage from "@/features/super-admin/pages/CMSPage";
 import SettingsPage from "@/features/super-admin/pages/SettingsPage";
 import ProfilePage from "@/features/super-admin/pages/ProfilePage";
 
+import SocietyAdminLayout from "@/features/society-admin/components/layout/SocietyAdminLayout";
+import { PlaceholderPage } from "@/features/society-admin/pages/PlaceholderPage";
+
+// Society Admin Pages
+import DashboardPage from "@/features/society-admin/pages/dashboard/DashboardPage";
+import BuildingsPage from "@/features/society-admin/pages/buildings/BuildingsPage";
+import BuildingDetailsPage from "@/features/society-admin/pages/buildings/BuildingDetailsPage";
+import FlatsPage from "@/features/society-admin/pages/flats/FlatsPage";
+import FlatDetailsPage from "@/features/society-admin/pages/flats/FlatDetailsPage";
+import AmenitiesPage from "@/features/society-admin/pages/amenities/AmenitiesPage";
+import ParkingPage from "@/features/society-admin/pages/parking/ParkingPage";
+import ResidentsPage from "@/features/society-admin/pages/residents/ResidentsPage";
+import ResidentDetailsPage from "@/features/society-admin/pages/residents/ResidentDetailsPage";
+import ResidentApprovalsPage from "@/features/society-admin/pages/residents/ResidentApprovalsPage";
+
+import VisitorsPage from "@/features/society-admin/pages/visitors/VisitorsPage";
+import VisitorDetailsPage from "@/features/society-admin/pages/visitors/VisitorDetailsPage";
+import VisitorPassesPage from "@/features/society-admin/pages/visitors/VisitorPassesPage";
+
+import ComplaintsPage from "@/features/society-admin/pages/complaints/ComplaintsPage";
+import ComplaintDetailsPage from "@/features/society-admin/pages/complaints/ComplaintDetailsPage";
+import SocietyAdminMaintenancePage from "@/features/society-admin/pages/maintenance/MaintenancePage";
+import InvoiceDetailsPage from "@/features/society-admin/pages/maintenance/InvoiceDetailsPage";
+import UtilityBillsPage from "@/features/society-admin/pages/utility/UtilityBillsPage";
+
 // Temporary Skeletons
-const SocietyAdminPage = () => <div className="p-8">Society Admin Dashboard skeleton</div>;
 const ResidentPage = () => <div className="p-8">Resident Dashboard skeleton</div>;
-const SecurityPage = () => <div className="p-8">Security Dashboard skeleton</div>;
-const StaffPage = () => <div className="p-8">Staff Dashboard skeleton</div>;
+import StaffPage from "@/features/society-admin/pages/staff/StaffPage";
+import StaffDetailsPage from "@/features/society-admin/pages/staff/StaffDetailsPage";
+import SecurityGuardsPage from "@/features/society-admin/pages/security/SecurityGuardsPage";
+import SecurityGuardDetailsPage from "@/features/society-admin/pages/security/SecurityGuardDetailsPage";
+import AttendancePage from "@/features/society-admin/pages/attendance/AttendancePage";
+
+import NoticesPage from "@/features/society-admin/pages/notices/NoticesPage";
+import NoticeDetailsPage from "@/features/society-admin/pages/notices/NoticeDetailsPage";
+import EventsPage from "@/features/society-admin/pages/events/EventsPage";
+import EventDetailsPage from "@/features/society-admin/pages/events/EventDetailsPage";
+import DocumentsPage from "@/features/society-admin/pages/documents/DocumentsPage";
+import PollsPage from "@/features/society-admin/pages/polls/PollsPage";
+import ReportsPage from "@/features/society-admin/pages/reports/ReportsPage";
+import SocietySettingsPage from "@/features/society-admin/pages/settings/SettingsPage";
+import SocietyProfilePage from "@/features/society-admin/pages/settings/ProfilePage";
 
 const UnauthorizedPage = () => <div className="p-8">401 Unauthorized</div>;
 const NotFoundPage = () => <div className="p-8">404 Not Found</div>;
@@ -78,9 +114,7 @@ export const router = createBrowserRouter([
       {
         path: "/auth",
         element: (
-          <GuestRoute>
-            <BlankLayout />
-          </GuestRoute>
+          <BlankLayout />
         ),
         children: [
           { path: "login", element: <LoginPage /> },
@@ -100,15 +134,7 @@ export const router = createBrowserRouter([
         ),
         children: [
           { path: "app", element: <NavigationShowcase /> },
-          
-          // Role Based Dashboards
-          {
-            path: "admin",
-            element: <RoleRoute requiredRole={Role.SOCIETY_ADMIN} exact><Outlet /></RoleRoute>,
-            children: [
-              { path: "", element: <SocietyAdminPage /> },
-            ]
-          },
+
           {
             path: "resident",
             element: <RoleRoute requiredRole={Role.RESIDENT} exact><Outlet /></RoleRoute>,
@@ -120,17 +146,78 @@ export const router = createBrowserRouter([
             path: "security",
             element: <RoleRoute requiredRole={Role.SECURITY} exact><Outlet /></RoleRoute>,
             children: [
-              { path: "", element: <SecurityPage /> },
+              { path: "", element: <PlaceholderPage title="Security" /> },
             ]
           },
           {
             path: "staff",
             element: <RoleRoute requiredRole={Role.STAFF} exact><Outlet /></RoleRoute>,
             children: [
-              { path: "", element: <StaffPage /> },
+              { path: "", element: <PlaceholderPage title="Staff" /> },
             ]
           },
         ],
+      },
+      
+      // Society Admin Shell (Custom Aurora Dashboard Layout)
+      {
+        path: "/admin",
+        element: (
+          <ProtectedRoute>
+            <RoleRoute requiredRole={Role.SOCIETY_ADMIN}>
+              <SocietyAdminLayout />
+            </RoleRoute>
+          </ProtectedRoute>
+        ),
+        children: [
+          { index: true, element: <DashboardPage /> },
+          
+          // Society
+          { path: "buildings", element: <BuildingsPage /> },
+          { path: "buildings/:buildingId", element: <BuildingDetailsPage /> },
+          { path: "flats", element: <FlatsPage /> },
+          { path: "flats/:flatId", element: <FlatDetailsPage /> },
+          { path: "amenities", element: <AmenitiesPage /> },
+          { path: "parking", element: <ParkingPage /> },
+          
+          { path: "residents", element: <ResidentsPage /> },
+          { path: "residents/:residentId", element: <ResidentDetailsPage /> },
+          { path: "resident-approvals", element: <ResidentApprovalsPage /> },
+          
+          // Visitors
+          { path: "visitors", element: <VisitorsPage /> },
+          { path: "visitors/:visitorId", element: <VisitorDetailsPage /> },
+          { path: "visitor-passes", element: <VisitorPassesPage /> },
+          
+          // Operations
+          { path: "complaints", element: <ComplaintsPage /> },
+          { path: "complaints/:complaintId", element: <ComplaintDetailsPage /> },
+          { path: "maintenance", element: <SocietyAdminMaintenancePage /> },
+          { path: "maintenance/invoices/:invoiceId", element: <InvoiceDetailsPage /> },
+          { path: "utility-bills", element: <UtilityBillsPage /> },
+          
+          // Workforce
+          { path: "staff", element: <StaffPage /> },
+          { path: "staff/:staffId", element: <StaffDetailsPage /> },
+          { path: "security", element: <SecurityGuardsPage /> },
+          { path: "security/:guardId", element: <SecurityGuardDetailsPage /> },
+          { path: "attendance", element: <AttendancePage /> },
+          
+          // Communication
+          { path: "notices", element: <NoticesPage /> },
+          { path: "notices/:noticeId", element: <NoticeDetailsPage /> },
+          { path: "events", element: <EventsPage /> },
+          { path: "events/:eventId", element: <EventDetailsPage /> },
+          { path: "documents", element: <DocumentsPage /> },
+          { path: "polls", element: <PollsPage /> },
+          
+          // Reports
+          { path: "reports", element: <ReportsPage /> },
+          
+          // Settings
+          { path: "settings", element: <SocietySettingsPage /> },
+          { path: "profile", element: <SocietyProfilePage /> },
+        ]
       },
       
       // Super Admin Shell (Custom Aurora Dashboard Layout)
@@ -161,6 +248,8 @@ export const router = createBrowserRouter([
           { path: "profile", element: <ProfilePage /> },
         ],
       },
+      
+
       
       { path: "*", element: <NotFoundPage /> },
     ]

@@ -4,6 +4,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { Loader2, ArrowLeft, Building2, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import { useSession } from "@/hooks/useSession";
+import { Role } from "@/types/auth";
+import { toast } from "sonner";
 import {
   Form,
   FormControl,
@@ -22,6 +26,8 @@ interface SocietyAdminFormProps {
 export function SocietyAdminForm({ onBack }: SocietyAdminFormProps) {
   const [isSuccess, setIsSuccess] = useState(false);
   const { mutate: signup, isPending } = useSocietyAdminSignup();
+  const { login } = useSession();
+  const navigate = useNavigate();
 
   const form = useForm<SocietyAdminFormData>({
     resolver: zodResolver(societyAdminSchema),
@@ -43,7 +49,27 @@ export function SocietyAdminForm({ onBack }: SocietyAdminFormProps) {
   function onSubmit(data: SocietyAdminFormData) {
     signup(data, {
       onSuccess: () => {
-        setIsSuccess(true);
+        // Auto-login for prototyping purposes
+        login(
+          {
+            id: "mock-society-admin-" + Date.now(),
+            firstName: data.fullName.split(" ")[0] || "Society",
+            lastName: data.fullName.split(" ").slice(1).join(" ") || "Admin",
+            email: data.email,
+            role: Role.SOCIETY_ADMIN,
+            societyId: "mock-new-society-id",
+          },
+          {
+            accessToken: "mock.access.token",
+            refreshToken: "mock.refresh.token",
+          }
+        );
+        
+        toast.success("Society Account Created", {
+          description: "Auto-logged in for development.",
+        });
+        
+        navigate("/admin");
       },
     });
   }
