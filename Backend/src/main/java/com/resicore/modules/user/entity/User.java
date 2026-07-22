@@ -58,6 +58,8 @@ public class User extends BaseEntity {
     @Builder.Default
     private boolean isActive = true;
 
+    private String societyId;
+
     private LocalDateTime lastLogin;
 
 }

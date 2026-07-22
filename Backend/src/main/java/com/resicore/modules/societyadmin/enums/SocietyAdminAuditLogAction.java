@@ -1,0 +1,21 @@
+package com.resicore.modules.societyadmin.enums;
+
+public enum SocietyAdminAuditLogAction {
+    RESIDENT_APPROVED,
+    RESIDENT_REJECTED,
+    RESIDENT_SUSPENDED,
+    RESIDENT_ACTIVATED,
+    
+    VISITOR_APPROVED,
+    VISITOR_REJECTED,
+    
+    STAFF_ASSIGNED,
+    STAFF_DEACTIVATED,
+    STAFF_TRANSFERRED,
+    
+    COMPLAINT_STAFF_ASSIGNED,
+    COMPLAINT_STAFF_REASSIGNED,
+    
+    SETTINGS_UPDATED,
+    REPORT_GENERATED
+}
