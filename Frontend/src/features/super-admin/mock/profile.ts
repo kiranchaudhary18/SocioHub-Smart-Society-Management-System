@@ -29,11 +29,11 @@ export interface UserProfile {
 export const mockProfile: UserProfile = {
   id: "USR-001",
   name: "Kiran Chaudhary",
-  email: "kiran@sociohub.com",
+  email: "kiran@resicore.com",
   phone: "+91 98765 43210",
   role: "Super Admin",
   avatar: "https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=transparent",
-  bio: "Lead Systems Architect & Super Admin for SocioHub. Overseeing platform infrastructure and global operations.",
+  bio: "Lead Systems Architect & Super Admin for ResiCore. Overseeing platform infrastructure and global operations.",
   completionScore: 85,
   securityScore: 92,
   twoFactorEnabled: true,

@@ -60,7 +60,7 @@ export function StoryExperience() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-            Watch how SocioHub orchestrates thousands of daily interactions into one seamless, elegant experience.
+            Watch how ResiCore orchestrates thousands of daily interactions into one seamless, elegant experience.
           </p>
         </div>
 

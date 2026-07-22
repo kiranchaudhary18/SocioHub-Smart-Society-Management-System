@@ -20,7 +20,7 @@ export function HighlightsPanel() {
           </div>
           <h3 className="text-2xl font-heading font-black mb-2">Weekly Insights</h3>
           <p className="text-white/80 font-medium text-sm leading-relaxed max-w-[90%]">
-            SocioHub has seen a 12% increase in active residents this week. 
+            ResiCore has seen a 12% increase in active residents this week. 
             Consider running an engagement campaign.
           </p>
         </div>

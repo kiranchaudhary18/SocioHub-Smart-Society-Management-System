@@ -9,7 +9,7 @@ export const signupService = {
     await delay(1500); // Simulate network latency
     
     // Simulate error for existing email
-    if (data.email === "admin@sociohub.com") {
+    if (data.email === "admin@resicore.com") {
       throw new Error("Email already exists");
     }
 
@@ -18,11 +18,11 @@ export const signupService = {
   },
 
   // TODO: Replace with Spring Boot Signup API (POST /api/v1/auth/signup/resident)
-  async registerResident(data: ResidentSignupRequest): Promise<void> {
+  async registerResident(data: ResidentSignupRequest): Promise<{ token: string; user: any }> {
     await delay(1500); // Simulate network latency
     
     // Simulate error for existing email
-    if (data.email === "resident@sociohub.com") {
+    if (data.email === "resident@resicore.com") {
       throw new Error("Email already exists");
     }
 
@@ -31,7 +31,18 @@ export const signupService = {
     }
 
     console.log("Mock Registration Success (Resident):", data);
-    return;
+    return {
+      token: "mock-jwt-token-resident",
+      user: {
+        id: "res-" + Math.random().toString(36).substr(2, 9),
+        firstName: data.fullName.split(" ")[0],
+        lastName: data.fullName.split(" ").slice(1).join(" "),
+        email: data.email,
+        role: "RESIDENT",
+        societyId: data.societyCode,
+        isActive: true,
+      }
+    };
   },
 
   // TODO: Replace with Spring Boot API (GET /api/v1/society/validate-code)

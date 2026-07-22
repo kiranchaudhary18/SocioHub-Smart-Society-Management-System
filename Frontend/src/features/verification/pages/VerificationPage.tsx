@@ -13,7 +13,7 @@ type VerificationWizardStep = "REQUIRED" | "OTP" | "VERIFYING" | "SUCCESS" | "FA
 
 export default function VerificationPage() {
   const [searchParams] = useSearchParams()
-  const initialEmail = searchParams.get("email") || "newuser@sociohub.com"
+  const initialEmail = searchParams.get("email") || "newuser@resicore.com"
   
   const [currentStep, setCurrentStep] = React.useState<VerificationWizardStep>("REQUIRED")
   const [email] = React.useState(initialEmail)

@@ -43,7 +43,7 @@ export function ForgotPasswordStep({ onSuccess }: Props) {
           <Mail className="w-8 h-8 text-primary" />
         </div>
         <h1 className="text-3xl font-heading font-bold text-foreground">
-          Forgot Password?
+          Reset your ResiCore password
         </h1>
         <p className="text-muted-foreground text-sm">
           No worries, we'll send you reset instructions.

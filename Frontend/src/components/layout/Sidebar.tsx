@@ -36,7 +36,7 @@ export function Sidebar({ isCollapsed, setIsCollapsed, className }: SidebarProps
               exit={{ opacity: 0 }}
               className="font-heading font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70"
             >
-              SocioHub
+              ResiCore
             </motion.span>
           )}
         </div>

@@ -107,7 +107,7 @@ export const mockAuditLogs: AuditEvent[] = [
     riskLevel: "Critical",
     details: {
       request: {
-        email: "admin@sociohub.com",
+        email: "admin@resicore.com",
         attemptCount: 4
       },
       response: {

@@ -42,7 +42,7 @@ export default function SettingsPage() {
             Platform Settings
           </h1>
           <p className="text-slate-500 font-medium text-base">
-            Global configurations and system administration for SocioHub.
+            Global configurations and system administration for ResiCore.
           </p>
         </div>
       </motion.div>

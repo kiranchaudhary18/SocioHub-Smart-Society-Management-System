@@ -145,7 +145,7 @@ export function Sidebar() {
               className="ml-4 flex flex-col"
             >
               <span className="font-heading font-black text-xl text-slate-800 tracking-tight whitespace-nowrap leading-tight">
-                SocioHub
+                ResiCore
               </span>
               <span className="text-[10px] font-bold text-[#72F1D1] uppercase tracking-widest leading-tight">
                 Society Admin

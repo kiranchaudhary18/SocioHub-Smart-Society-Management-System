@@ -19,7 +19,7 @@ export function WelcomeSection() {
           </span>
         </h1>
         <p className="text-slate-500 font-medium text-base">
-          Here is what's happening across the SocioHub platform today.
+          Here is what's happening across the ResiCore platform today.
         </p>
       </div>
 

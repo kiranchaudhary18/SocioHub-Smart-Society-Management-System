@@ -158,7 +158,7 @@ export function CinematicEnding() {
                   <div className="h-8 w-8 rounded-lg bg-foreground flex items-center justify-center">
                     <span className="text-background font-heading font-black text-sm">SH</span>
                   </div>
-                  <span className="font-heading font-black text-xl tracking-tight text-foreground">SocioHub</span>
+                  <span className="font-heading font-black text-xl tracking-tight text-foreground">ResiCore</span>
                 </div>
                 <p className="text-muted-foreground font-light text-sm mb-8 max-w-xs leading-relaxed">
                   The unified operating system for modern residential communities. Beautifully designed, infinitely scalable.
@@ -204,7 +204,7 @@ export function CinematicEnding() {
           {/* Bottom Bar */}
           <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
              <p className="text-xs text-muted-foreground font-medium">
-               &copy; 2026 SocioHub. Made with ❤️ for Modern Communities.
+               &copy; 2026 ResiCore. Made with ❤️ for Modern Communities.
              </p>
              <div className="flex items-center gap-6">
                 <span className="text-xs text-muted-foreground font-mono">v1.0.0</span>

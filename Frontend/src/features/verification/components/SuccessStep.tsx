@@ -61,7 +61,7 @@ export function SuccessStep() {
           Account Activated!
         </h1>
         <p className="text-muted-foreground text-base">
-          Your email has been successfully verified. Welcome to the SocioHub community.
+          Your email has been successfully verified. Welcome to the ResiCore community.
         </p>
       </motion.div>
 

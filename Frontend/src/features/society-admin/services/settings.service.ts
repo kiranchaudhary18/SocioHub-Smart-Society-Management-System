@@ -7,6 +7,7 @@ export interface SocietySettings {
     phone: string;
     website: string;
     description: string;
+    societyCode: string;
   };
   branding: {
     logoUrl: string;
@@ -65,7 +66,8 @@ const mockSettings: SocietySettings = {
     email: "admin@prestigefalcon.com",
     phone: "+91 98765 43210",
     website: "www.prestigefalcon.com",
-    description: "A premium residential society with world-class amenities."
+    description: "A premium residential society with world-class amenities.",
+    societyCode: "PFC-88902-XJ9"
   },
   branding: {
     logoUrl: "https://ui-avatars.com/api/?name=PF&background=72F1D1&color=fff",

@@ -65,7 +65,7 @@ export function CommunitySuccess() {
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto"
           >
-            Experience the heartbeat of thousands of thriving neighborhoods powered by SocioHub.
+            Experience the heartbeat of thousands of thriving neighborhoods powered by ResiCore.
           </motion.p>
         </div>
 

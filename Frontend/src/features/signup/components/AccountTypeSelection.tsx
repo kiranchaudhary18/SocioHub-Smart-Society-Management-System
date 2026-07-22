@@ -21,10 +21,10 @@ export function AccountTypeSelection({ onSelect }: AccountTypeSelectionProps) {
           transition={{ duration: 0.5, type: "spring" }}
           className="mx-auto xl:mx-0 w-10 h-10 rounded-xl bg-gradient-to-br from-[#8F7CFF] to-[#3DD9FF] flex items-center justify-center shadow-lg mb-3"
         >
-          <span className="text-xl font-heading font-black text-white">S</span>
+          <span className="text-xl font-heading font-black text-white">R</span>
         </motion.div>
         <h1 className="text-xl sm:text-[24px] font-heading font-extrabold text-slate-900 tracking-tight mb-1">
-          Select Account Type
+          Create your ResiCore Account
         </h1>
         <p className="text-slate-500 font-medium text-sm">
           Choose how you want to join the platform

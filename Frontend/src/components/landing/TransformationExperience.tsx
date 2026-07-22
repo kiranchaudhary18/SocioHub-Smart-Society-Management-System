@@ -76,7 +76,7 @@ export function TransformationExperience() {
         </div>
 
         {/* =========================================================================
-            LAYER 2: SOCIOHUB (Top Layer, revealed by wiping clip-path)
+            LAYER 2: RESICORE (Top Layer, revealed by wiping clip-path)
             ========================================================================= */}
         <motion.div 
           style={{ clipPath }}
@@ -100,7 +100,7 @@ export function TransformationExperience() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl perspective-1000">
             
-            {/* SocioHub QR Entry */}
+            {/* ResiCore QR Entry */}
             <div className="bg-white/40 backdrop-blur-3xl p-8 rounded-3xl shadow-[0_20px_60px_-15px_rgba(114,241,209,0.3)] border border-white/60 relative group hover:scale-[1.02] transition-transform duration-500">
                <div className="absolute inset-0 bg-gradient-to-br from-aurora-mint/20 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500" />
                <div className="relative z-10 flex items-center gap-6">
@@ -117,7 +117,7 @@ export function TransformationExperience() {
                </div>
             </div>
 
-            {/* SocioHub Kanban */}
+            {/* ResiCore Kanban */}
             <div className="bg-white/40 backdrop-blur-3xl p-8 rounded-3xl shadow-[0_20px_60px_-15px_rgba(255,93,162,0.3)] border border-white/60 relative group hover:scale-[1.02] transition-transform duration-500">
                <div className="absolute inset-0 bg-gradient-to-br from-aurora-pink/20 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500" />
                <div className="relative z-10 flex items-center justify-between">
@@ -134,7 +134,7 @@ export function TransformationExperience() {
                </div>
             </div>
 
-            {/* SocioHub Payments */}
+            {/* ResiCore Payments */}
             <div className="bg-white/40 backdrop-blur-3xl p-8 rounded-3xl shadow-[0_20px_60px_-15px_rgba(255,209,102,0.3)] border border-white/60 relative group hover:scale-[1.02] transition-transform duration-500 col-span-1 md:col-span-2 max-w-2xl mx-auto w-full flex items-center justify-between">
                <div className="absolute inset-0 bg-gradient-to-br from-aurora-gold/20 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500" />
                <div className="relative z-10">

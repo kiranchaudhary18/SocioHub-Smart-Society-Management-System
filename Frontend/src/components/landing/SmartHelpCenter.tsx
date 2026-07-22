@@ -5,7 +5,7 @@ import { Search, ChevronDown, MessageCircle, Mail, Calendar, BookOpen, Users, Bu
 export function SmartHelpCenter() {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
   const [placeholderText, setPlaceholderText] = useState("");
-  const fullPlaceholder = "Search anything about SocioHub...";
+  const fullPlaceholder = "Search anything about ResiCore...";
 
   // Typing effect for the search placeholder
   useEffect(() => {
@@ -26,7 +26,7 @@ export function SmartHelpCenter() {
   const faqs = [
     {
       q: "How does the QR visitor pass system work?",
-      a: "Residents can generate a one-time or multi-use QR code from the SocioHub app and share it via WhatsApp. When the visitor arrives, the guard scans it using their device. Entry is approved instantly, and the resident receives a real-time push notification.",
+      a: "Residents can generate a one-time or multi-use QR code from the ResiCore app and share it via WhatsApp. When the visitor arrives, the guard scans it using their device. Entry is approved instantly, and the resident receives a real-time push notification.",
       icon: Zap,
       color: "text-aurora-mint"
     },
@@ -38,7 +38,7 @@ export function SmartHelpCenter() {
     },
     {
       q: "Can I pay using Credit Cards?",
-      a: "Yes! SocioHub supports UPI, Net Banking, Credit Cards, and Debit Cards. We even offer auto-pay mandates so you never miss a maintenance deadline again.",
+      a: "Yes! ResiCore supports UPI, Net Banking, Credit Cards, and Debit Cards. We even offer auto-pay mandates so you never miss a maintenance deadline again.",
       icon: CreditCard,
       color: "text-aurora-gold"
     },

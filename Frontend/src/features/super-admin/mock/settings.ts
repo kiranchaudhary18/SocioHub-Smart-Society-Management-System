@@ -25,16 +25,16 @@ export interface PlatformSettings {
 
 export const mockSettings: PlatformSettings = {
   general: {
-    platformName: "SocioHub Platform",
-    contactEmail: "admin@sociohub.com",
-    supportPhone: "+1-800-SOCIOHUB",
+    platformName: "ResiCore Platform",
+    contactEmail: "admin@resicore.com",
+    supportPhone: "+1-800-RESICORE",
     timezone: "UTC+5:30",
   },
   smtp: {
     host: "smtp.mailgun.org",
     port: "587",
-    username: "postmaster@mg.sociohub.com",
-    fromEmail: "noreply@sociohub.com",
+    username: "postmaster@mg.resicore.com",
+    fromEmail: "noreply@resicore.com",
   },
   security: {
     mfaRequired: true,

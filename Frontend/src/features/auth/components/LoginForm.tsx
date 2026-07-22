@@ -60,7 +60,7 @@ export function LoginForm() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-[32px] font-heading font-extrabold text-slate-900 tracking-tight mb-2"
         >
-          Welcome Back
+          Welcome back to ResiCore
         </motion.h1>
         
         <motion.p 

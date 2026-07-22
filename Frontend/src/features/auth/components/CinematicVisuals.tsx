@@ -33,7 +33,7 @@ export function CinematicVisuals() {
         <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-aurora-mint to-aurora-aqua flex items-center justify-center shadow-[0_0_40px_rgba(114,241,209,0.4)]">
           <Building2 className="w-6 h-6 text-[#0A0A0B]" />
         </div>
-        <span className="text-3xl font-bold font-heading tracking-tight text-white">SocioHub</span>
+        <span className="text-3xl font-bold font-heading tracking-tight text-white">ResiCore</span>
       </div>
 
       {/* Middle Section: Floating Dashboard Simulation */}

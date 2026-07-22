@@ -37,7 +37,7 @@ export function AuthenticatedSidebar() {
                 exit={{ opacity: 0, x: -10 }}
                 className="font-heading font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70"
               >
-                SocioHub
+                ResiCore
               </motion.span>
             )}
           </AnimatePresence>

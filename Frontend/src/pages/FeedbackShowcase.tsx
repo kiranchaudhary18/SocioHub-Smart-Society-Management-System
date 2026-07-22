@@ -70,7 +70,7 @@ export default function FeedbackShowcase() {
         
         <div className="grid gap-4">
           <Alert variant="info" title="Scheduled Maintenance">
-            The SocioHub platform will undergo maintenance on Sunday at 2:00 AM UTC. Expect up to 30 minutes of downtime.
+            The ResiCore platform will undergo maintenance on Sunday at 2:00 AM UTC. Expect up to 30 minutes of downtime.
           </Alert>
 
           <Alert variant="success" title="Migration Complete">

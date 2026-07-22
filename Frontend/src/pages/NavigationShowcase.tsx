@@ -11,7 +11,7 @@ export default function NavigationShowcase() {
           animate={{ opacity: 1, y: 0 }}
           className="text-display-m font-heading"
         >
-          Welcome to SocioHub
+          Welcome to ResiCore
         </motion.h1>
         <p className="text-muted-foreground text-lg">
           This is a preview of the new Enterprise Navigation Shell.

@@ -29,7 +29,7 @@ export default function DataShowcase() {
             Aurora Data System
           </motion.h1>
           <p className="text-body-lg text-muted-foreground">
-            The premium data visualization library for SocioHub.
+            The premium data visualization library for ResiCore.
           </p>
         </div>
 

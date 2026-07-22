@@ -28,7 +28,7 @@ export default function FormShowcase() {
             Aurora Form System
           </motion.h1>
           <p className="text-body-lg text-muted-foreground">
-            The premium component library powering SocioHub.
+            The premium component library powering ResiCore.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export default function FormShowcase() {
               <h3 className="text-h5">Validation States</h3>
               <Input 
                 label="Username" 
-                defaultValue="sociohub_admin"
+                defaultValue="resicore_admin"
                 success
                 helperText="This username is available"
                 rightIcon={<CheckCircle2 className="w-5 h-5 text-success" />}

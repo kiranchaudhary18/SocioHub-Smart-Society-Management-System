@@ -1,26 +1,26 @@
 import { Role, type User } from "@/types/auth"
 
 export const mockUsers: Record<string, User> = {
-  "superadmin@sociohub.com": {
+  "superadmin@resicore.com": {
     id: "u_super_1",
-    email: "superadmin@sociohub.com",
+    email: "superadmin@resicore.com",
     firstName: "Sarah",
     lastName: "Connor",
     role: Role.SUPER_ADMIN,
     isActive: true,
   },
-  "admin@sociohub.com": {
+  "admin@resicore.com": {
     id: "u_admin_1",
-    email: "admin@sociohub.com",
+    email: "admin@resicore.com",
     firstName: "James",
     lastName: "Holden",
     role: Role.SOCIETY_ADMIN,
     societyId: "soc_123",
     isActive: true,
   },
-  "resident@sociohub.com": {
+  "resident@resicore.com": {
     id: "u_res_1",
-    email: "resident@sociohub.com",
+    email: "resident@resicore.com",
     firstName: "Amos",
     lastName: "Burton",
     role: Role.RESIDENT,
@@ -29,18 +29,18 @@ export const mockUsers: Record<string, User> = {
     flatNumber: "402",
     isActive: true,
   },
-  "security@sociohub.com": {
+  "security@resicore.com": {
     id: "u_sec_1",
-    email: "security@sociohub.com",
+    email: "security@resicore.com",
     firstName: "Bobbie",
     lastName: "Draper",
     role: Role.SECURITY,
     societyId: "soc_123",
     isActive: true,
   },
-  "staff@sociohub.com": {
+  "staff@resicore.com": {
     id: "u_staff_1",
-    email: "staff@sociohub.com",
+    email: "staff@resicore.com",
     firstName: "Naomi",
     lastName: "Nagata",
     role: Role.STAFF,

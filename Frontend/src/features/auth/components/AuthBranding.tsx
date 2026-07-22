@@ -17,7 +17,7 @@ export function AuthBranding() {
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-aurora-mint to-aurora-aqua flex items-center justify-center shadow-glow">
             <Building2 className="w-6 h-6 text-zinc-950" />
           </div>
-          <span className="text-2xl font-bold font-heading tracking-tight text-white">SocioHub</span>
+          <span className="text-2xl font-bold font-heading tracking-tight text-white">ResiCore</span>
         </div>
       </div>
 

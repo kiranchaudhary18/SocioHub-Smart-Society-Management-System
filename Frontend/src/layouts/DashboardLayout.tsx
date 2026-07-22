@@ -44,7 +44,7 @@ export default function DashboardLayout() {
               animate={{ opacity: 1 }}
               className="font-heading font-bold text-xl text-gradient-primary whitespace-nowrap"
             >
-              SocioHub
+              ResiCore
             </motion.span>
           )}
           {isCollapsed && (

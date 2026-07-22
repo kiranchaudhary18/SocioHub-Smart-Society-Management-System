@@ -16,12 +16,17 @@ import { useResidentSignup, useValidateSocietyCode } from "../hooks/useSignup";
 import { CustomCheckbox } from "@/features/auth/components/CustomCheckbox";
 import { cn } from "@/lib/utils";
 
+import { useNavigate } from "react-router-dom";
+import { useSession } from "@/hooks/useSession";
+import { toast } from "sonner";
+
 interface ResidentFormProps {
   onBack: () => void;
 }
 
 export function ResidentForm({ onBack }: ResidentFormProps) {
-  const [isSuccess, setIsSuccess] = useState(false);
+  const navigate = useNavigate();
+  const { login } = useSession();
   
   const { mutate: signup, isPending: isSigningUp } = useResidentSignup();
   const { mutate: validateCode, isPending: isValidating, data: validationResult } = useValidateSocietyCode();
@@ -60,44 +65,15 @@ export function ResidentForm({ onBack }: ResidentFormProps) {
     }
     
     signup(data, {
-      onSuccess: () => {
-        setIsSuccess(true);
+      onSuccess: (response) => {
+        login(response.user, { accessToken: response.token, refreshToken: response.token });
+        toast.success("Welcome to ResiCore!");
+        navigate("/resident");
       },
     });
   }
 
   const inputClass = "w-full px-4 h-11 bg-white/50 border border-slate-200/60 hover:border-slate-300 focus:outline-none focus:border-[#3DD9FF] focus:ring-4 focus:ring-[#3DD9FF]/10 rounded-xl transition-all text-sm text-slate-800 shadow-[0_2px_10px_rgba(0,0,0,0.02)]";
-
-  if (isSuccess) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="w-full max-w-[500px] bg-white/60 backdrop-blur-2xl border border-white/80 shadow-[0_24px_60px_rgba(0,0,0,0.05)] rounded-[32px] p-8 sm:p-10 relative z-20 text-center"
-      >
-        <motion.div 
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.5, delay: 0.2 }}
-          className="mx-auto w-20 h-20 bg-[#3DD9FF]/20 rounded-full flex items-center justify-center mb-6"
-        >
-          <CheckCircle2 className="w-10 h-10 text-[#3DD9FF]" />
-        </motion.div>
-        
-        <h2 className="text-2xl font-bold text-slate-900 mb-3">Request Sent Successfully</h2>
-        <p className="text-slate-500 font-medium mb-8 leading-relaxed text-sm">
-          Your request to join the society is waiting for Society Admin approval. You will receive an email once approved.
-        </p>
-        
-        <Button 
-          onClick={() => window.location.href = '/'}
-          className="w-full h-12 rounded-xl text-sm font-bold bg-slate-900 text-white hover:-translate-y-0.5 transition-all"
-        >
-          Return to Home
-        </Button>
-      </motion.div>
-    );
-  }
 
   return (
     <motion.div

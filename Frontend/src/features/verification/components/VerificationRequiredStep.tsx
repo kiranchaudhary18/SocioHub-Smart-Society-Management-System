@@ -33,10 +33,10 @@ export function VerificationRequiredStep({ email, onSent }: Props) {
       
       <div className="space-y-3">
         <h1 className="text-3xl font-heading font-bold text-foreground">
-          Verify your email
+          Verify your ResiCore account
         </h1>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          To keep SocioHub secure, we need to verify your email address. We will send a 6-digit code to: <br/>
+          To keep ResiCore secure, we need to verify your email address. We will send a 6-digit code to: <br/>
           <span className="font-semibold text-foreground mt-2 inline-block">{email}</span>
         </p>
       </div>

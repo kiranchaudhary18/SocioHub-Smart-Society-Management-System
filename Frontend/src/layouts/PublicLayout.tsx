@@ -104,7 +104,7 @@ export default function PublicLayout() {
                 <circle cx="28" cy="12" r="4" fill="url(#logo-gradient-1)" />
               </svg>
             </div>
-            <span className="text-xl font-heading font-black tracking-tighter text-foreground">SocioHub</span>
+            <span className="text-xl font-heading font-black tracking-tighter text-foreground">ResiCore</span>
           </Link>
           
           {/* Desktop Navigation Links */}

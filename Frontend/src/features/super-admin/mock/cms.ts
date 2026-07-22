@@ -27,15 +27,15 @@ export const cmsKPIs = {
 export const mockCMSPages: CMSContent[] = [
   {
     id: "PG-001",
-    title: "SocioHub Home",
+    title: "ResiCore Home",
     slug: "/",
     section: "Landing Page",
     status: "Published",
     lastEditedBy: "Kiran Chaudhary",
     lastEditedAt: "2026-07-21T09:00:00Z",
-    seoTitle: "SocioHub - Smart Society Management System",
+    seoTitle: "ResiCore - Modern Residential Management Platform",
     seoDescription: "The premium enterprise SaaS platform for modern societies.",
-    content: "<h1>Welcome to SocioHub</h1><p>Experience the next generation of society management.</p>"
+    content: "<h1>Welcome to ResiCore</h1><p>Experience the next generation of society management.</p>"
   },
   {
     id: "PG-002",
@@ -45,8 +45,8 @@ export const mockCMSPages: CMSContent[] = [
     status: "Draft",
     lastEditedBy: "Legal Team",
     lastEditedAt: "2026-07-20T14:30:00Z",
-    seoTitle: "Privacy Policy | SocioHub",
-    seoDescription: "Read about how SocioHub protects your data and privacy.",
+    seoTitle: "Privacy Policy | ResiCore",
+    seoDescription: "Read about how ResiCore protects your data and privacy.",
     content: "<h1>Privacy Policy</h1><p>Your data security is our top priority...</p>"
   }
 ];

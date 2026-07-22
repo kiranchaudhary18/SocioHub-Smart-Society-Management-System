@@ -66,7 +66,6 @@ import InvoiceDetailsPage from "@/features/society-admin/pages/maintenance/Invoi
 import UtilityBillsPage from "@/features/society-admin/pages/utility/UtilityBillsPage";
 
 // Temporary Skeletons
-const ResidentPage = () => <div className="p-8">Resident Dashboard skeleton</div>;
 import StaffPage from "@/features/society-admin/pages/staff/StaffPage";
 import StaffDetailsPage from "@/features/society-admin/pages/staff/StaffDetailsPage";
 import SecurityGuardsPage from "@/features/society-admin/pages/security/SecurityGuardsPage";
@@ -82,6 +81,35 @@ import PollsPage from "@/features/society-admin/pages/polls/PollsPage";
 import ReportsPage from "@/features/society-admin/pages/reports/ReportsPage";
 import SocietySettingsPage from "@/features/society-admin/pages/settings/SettingsPage";
 import SocietyProfilePage from "@/features/society-admin/pages/settings/ProfilePage";
+
+// Resident Portal Layout
+import ResidentLayout from "@/features/resident/components/layout/ResidentLayout";
+
+// Resident Pages
+import DashboardPageRes from "@/features/resident/pages/dashboard/DashboardPage";
+import MyFlatPage from "@/features/resident/pages/home/MyFlatPage";
+import FamilyMembersPage from "@/features/resident/pages/home/FamilyMembersPage";
+import VisitorPassesPageRes from "@/features/resident/pages/visitors/VisitorPassesPage";
+import VisitorHistoryPage from "@/features/resident/pages/visitors/VisitorHistoryPage";
+import VisitorDetailsPageRes from "@/features/resident/pages/visitors/VisitorDetailsPage";
+import MaintenanceBillsPage from "@/features/resident/pages/payments/MaintenanceBillsPage";
+import UtilityBillsPageRes from "@/features/resident/pages/payments/UtilityBillsPage";
+import PaymentHistoryPage from "@/features/resident/pages/payments/PaymentHistoryPage";
+import PaymentDetailsPage from "@/features/resident/pages/payments/PaymentDetailsPage";
+import ComplaintsPageRes from "@/features/resident/pages/complaints/ComplaintsPage";
+import ComplaintDetailsPageRes from "@/features/resident/pages/complaints/ComplaintDetailsPage";
+import ExploreAmenitiesPage from "@/features/resident/pages/amenities/ExploreAmenitiesPage";
+import MyBookingsPage from "@/features/resident/pages/amenities/MyBookingsPage";
+import BookingDetailsPage from "@/features/resident/pages/amenities/BookingDetailsPage";
+import NoticesPageRes from "@/features/resident/pages/community/NoticesPage";
+import EventsPageRes from "@/features/resident/pages/community/EventsPage";
+import PollsPageRes from "@/features/resident/pages/community/PollsPage";
+import NoticeDetailsPageRes from "@/features/resident/pages/community/NoticeDetailsPage";
+import EventDetailsPageRes from "@/features/resident/pages/community/EventDetailsPage";
+import PollDetailsPage from "@/features/resident/pages/community/PollDetailsPage";
+import DocumentsPageRes from "@/features/resident/pages/documents/DocumentsPage";
+import DocumentPreviewPage from "@/features/resident/pages/documents/DocumentPreviewPage";
+import ProfilePageRes from "@/features/resident/pages/profile/ProfilePage";
 
 const UnauthorizedPage = () => <div className="p-8">401 Unauthorized</div>;
 const NotFoundPage = () => <div className="p-8">404 Not Found</div>;
@@ -135,13 +163,7 @@ export const router = createBrowserRouter([
         children: [
           { path: "app", element: <NavigationShowcase /> },
 
-          {
-            path: "resident",
-            element: <RoleRoute requiredRole={Role.RESIDENT} exact><Outlet /></RoleRoute>,
-            children: [
-              { path: "", element: <ResidentPage /> },
-            ]
-          },
+
           {
             path: "security",
             element: <RoleRoute requiredRole={Role.SECURITY} exact><Outlet /></RoleRoute>,
@@ -157,6 +179,52 @@ export const router = createBrowserRouter([
             ]
           },
         ],
+      },
+      
+      // Resident Shell (Custom Aurora Dashboard Layout)
+      {
+        path: "/resident",
+        element: (
+          <ProtectedRoute>
+            <RoleRoute requiredRole={Role.RESIDENT}>
+              <ResidentLayout />
+            </RoleRoute>
+          </ProtectedRoute>
+        ),
+        children: [
+          { index: true, element: <DashboardPageRes /> },
+          
+          { path: "my-home/flat", element: <MyFlatPage /> },
+          { path: "my-home/family", element: <FamilyMembersPage /> },
+          
+          { path: "visitors/passes", element: <VisitorPassesPageRes /> },
+          { path: "visitors/history", element: <VisitorHistoryPage /> },
+          { path: "visitors/:id", element: <VisitorDetailsPageRes /> },
+          
+          { path: "payments/maintenance", element: <MaintenanceBillsPage /> },
+          { path: "payments/utility", element: <UtilityBillsPageRes /> },
+          { path: "payments/history", element: <PaymentHistoryPage /> },
+          { path: "payments/:id", element: <PaymentDetailsPage /> },
+          
+          { path: "complaints", element: <ComplaintsPageRes /> },
+          { path: "complaints/:id", element: <ComplaintDetailsPageRes /> },
+          
+          { path: "amenities/explore", element: <ExploreAmenitiesPage /> },
+          { path: "amenities/bookings", element: <MyBookingsPage /> },
+          { path: "bookings/:id", element: <BookingDetailsPage /> },
+          
+          { path: "community/notices", element: <NoticesPageRes /> },
+          { path: "community/notices/:id", element: <NoticeDetailsPageRes /> },
+          { path: "community/events", element: <EventsPageRes /> },
+          { path: "community/events/:id", element: <EventDetailsPageRes /> },
+          { path: "community/polls", element: <PollsPageRes /> },
+          { path: "community/polls/:id", element: <PollDetailsPage /> },
+          
+          { path: "documents", element: <DocumentsPageRes /> },
+          { path: "documents/:id", element: <DocumentPreviewPage /> },
+          
+          { path: "profile", element: <ProfilePageRes /> },
+        ]
       },
       
       // Society Admin Shell (Custom Aurora Dashboard Layout)

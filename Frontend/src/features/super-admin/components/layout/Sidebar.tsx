@@ -97,7 +97,7 @@ export function Sidebar() {
               exit={{ opacity: 0, x: -10 }}
               className="ml-3 font-heading font-bold text-xl text-slate-800 tracking-tight whitespace-nowrap"
             >
-              SocioHub
+              ResiCore
             </motion.span>
           )}
         </AnimatePresence>

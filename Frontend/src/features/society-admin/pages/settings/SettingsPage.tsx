@@ -6,7 +6,7 @@ import { SectionCard } from "../../components/ui/SectionCard";
 import { 
   Building2, Image as ImageIcon, CheckSquare, Wrench, ShieldCheck, 
   Bell, Lock, Plug, Database, Save, RotateCcw, Activity, 
-  Search, Info, Link as LinkIcon, CheckCircle2, Settings
+  Search, Info, Link as LinkIcon, CheckCircle2, Settings, Copy
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -184,6 +184,20 @@ export default function SettingsPage() {
                 <Building2 className="w-5 h-5 text-[#8F7CFF]" /> General Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="md:col-span-2 flex flex-col md:flex-row md:items-center justify-between p-5 bg-[#72F1D1]/10 rounded-xl border border-[#72F1D1]/20 gap-4">
+                  <div className="flex flex-col">
+                    <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest">Society Invite Code</span>
+                    <span className="text-2xl font-heading font-black text-emerald-950 mt-1">{settings.general.societyCode}</span>
+                    <span className="text-xs font-medium text-emerald-700/80 mt-1">Share this code with residents and staff so they can join your society.</span>
+                  </div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText(settings.general.societyCode)} 
+                    className="shrink-0 px-4 py-2.5 bg-white text-emerald-700 hover:bg-emerald-50 border border-emerald-200 font-bold text-sm rounded-lg shadow-sm transition-colors flex items-center gap-2"
+                  >
+                    <Copy className="w-4 h-4" /> Copy Code
+                  </button>
+                </div>
+                
                 <div className="md:col-span-2">
                   <InputField label="Society Name" value={settings.general.name} onChange={(val: string) => setSettings({...settings, general: {...settings.general, name: val}})} />
                 </div>
